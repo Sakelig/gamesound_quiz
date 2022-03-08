@@ -1,13 +1,26 @@
-import express from "express"
+import express from "express";
 import bodyParser from "body-parser";
-import path from "path"
+import path from "path";
+import { MongoClient } from "mongodb";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: false
 }))
+
+/*
+
+const mongoClient = new MongoClient(process.env.MONGODB_URL);
+mongoClient.connect().then(async () => {
+    console.log("connected to mongoDB")
+    const databases = await mongoClient.db().admin().listDatabases()
+    console.log(databases)
+})
+ */
 
 app.get("/api/questions", (res, req, next) => {
     //should get all the questions from mongoDB
