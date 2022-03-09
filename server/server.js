@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 
-/*
+
 
 const mongoClient = new MongoClient(process.env.MONGODB_URL);
 mongoClient.connect().then(async () => {
@@ -20,7 +20,7 @@ mongoClient.connect().then(async () => {
     const databases = await mongoClient.db().admin().listDatabases()
     console.log(databases)
 })
- */
+
 
 app.get("/api/questions", (res, req, next) => {
     //should get all the questions from mongoDB
