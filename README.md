@@ -5,8 +5,8 @@
 * [ ] CV Paste from other project
 * [ ] Simple styling
 * [ ] Find way to deliver mp3 files better or a place to store them thats not in the project
-* [ ] Host site on heroku
-* [ ] API call for all data
+* [X] Host site on heroku
+* [X] API call for all data
 
 ## Extra features for full/optimal completion
 * [ ] Login with google and normal create and use stuff with DB
