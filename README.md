@@ -7,6 +7,7 @@
 * [X] Host site on heroku
 * [X] API call for all data
 * [ ] Find way to hide fullscore reward call. encrypt?/late api call?
+* [ ] Hide all answers from questions api call. make server handle right/wrong ?
 
 ## Extra features for full/optimal completion
 * [ ] Login with google and normal create and use stuff with DB
