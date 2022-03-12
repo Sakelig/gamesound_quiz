@@ -24,6 +24,10 @@ mongoClient.connect().then(async () => {
   );
 });
 
+app.get("/api/fullscore", async (req, res) => {
+  res.json(process.env.REWARD);
+});
+
 app.use(express.static("../client/dist"));
 
 app.use((req, res, next) => {
