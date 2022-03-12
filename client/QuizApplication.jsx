@@ -7,6 +7,7 @@ import { fetchJSON } from "./FetchJSON";
 export function QuizApplication() {
   const quizApi = {
     getQuestions: async () => await fetchJSON("/api/questions"),
+    getReward: async () => await fetchJSON("/api/fullscore"),
   };
 
   return (

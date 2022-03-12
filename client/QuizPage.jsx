@@ -32,7 +32,7 @@ export function QuizPage({ quizApi }) {
   }
 
   let count = 0;
-  const [soundList, setSoundList] = useState([
+  const soundList = [
     sound1,
     sound2,
     sound3,
@@ -41,7 +41,7 @@ export function QuizPage({ quizApi }) {
     sound6,
     sound7,
     sound8,
-  ]);
+  ];
   const [inputCollection, setInputCollection] = useState({
     input1: "",
     input2: "",
@@ -65,10 +65,12 @@ export function QuizPage({ quizApi }) {
   const [listOfQuestions, setListOfQuestions] = useState("");
   let questions = "";
   const [Count, setCount] = useState(0);
+  const [reward, setReward] = useState("");
 
-  //Handles mongoDB call
+  //Handles server calls
   useEffect(async () => {
     setListOfQuestions(await quizApi.getQuestions());
+    setReward(await quizApi.getReward());
   }, []);
 
   //handles input from user
@@ -82,7 +84,6 @@ export function QuizPage({ quizApi }) {
               listOfQuestions[i].answers[j].toLowerCase() &&
             answerCollection[i] === false
           ) {
-            console.log("test");
             setAnswerCollection(answerCollection, (answerCollection[i] = true));
             setCount((prevState) => prevState + 1);
           }
@@ -119,11 +120,14 @@ export function QuizPage({ quizApi }) {
     });
   }
 
+  if (Count === listOfQuestions.length && listOfQuestions.length) {
+    alert("Pog you did it! \n here is your reward :) \n" + reward + "\n :)");
+  }
+
   return (
     <div>
-      <h1>Allo! Welcome to the quiz game</h1>{" "}
+      <h1>Allo! Welcome to the quiz game</h1>
       <h2>
-        {" "}
         {Count} of {listOfQuestions.length}
       </h2>
       <div>{questions}</div>
