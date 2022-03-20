@@ -9,7 +9,7 @@ Uhm.. It works pretty well but there are easy ways to cheat since stuff is clear
 * [X] CV Paste stuff from old project
 * [X] Client side functionality
 * [X] Server side
-* [ ] Simple styling
+* [X] Simple styling
 * [X] Host site on heroku
 * [X] API call for all data
 * [ ] Find way to hide fullscore reward call. encrypt?/late api call?
