@@ -97,6 +97,7 @@ export function QuizPage({ quizApi }) {
   if (listOfQuestions) {
     questions = listOfQuestions.map((question) => {
       count++;
+
       return (
         <div key={question.id}>
           <QuizCard
@@ -126,11 +127,16 @@ export function QuizPage({ quizApi }) {
 
   return (
     <div>
-      <h1>Allo! Welcome to the quiz game</h1>
-      <h2>
-        {Count} of {listOfQuestions.length}
-      </h2>
-      <div>{questions}</div>
+      <div
+        className={"text-center fixed-top"}
+        style={{ backgroundColor: "white" }}
+      >
+        <h1>Allo! Welcome to the quiz game</h1>
+        <h2>
+          {Count} of {listOfQuestions.length}
+        </h2>
+      </div>
+      <div style={{ marginTop: 120 }}>{questions}</div>
     </div>
   );
 }
